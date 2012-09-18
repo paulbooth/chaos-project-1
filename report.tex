@@ -40,8 +40,11 @@ In the first section we will provide a rough outline of the proof for this theor
 
 \section{The big picture}
 
+In order to prove that a first-order map $F$ contains an orbit with period $k$, there are two things we must prove. First, we must show that there is a fixed point on the $k^{th}$ return map of F. In other words, we must show that there is some $x \in J$ for which $F^k \left( x \right) = x$. To understand why this implies periodicity, let's examine $F^2k \left( x \right)$. This is simply equal to $F^k \left( F^k \left( x \right) \right) = F^k \left( x \right) = x$. A simple inductive proof will show that $F^n \left( x \right) = x$ whenever $n \equiv 0 \left(\mod k \right)$, thus showing that $x$ is a periodic point.
 
+However, even if we find a fixed point $x$ of $F^k$, this does not imply that the periodicity of $x$ is $k$. For example, $x$ could also be a fixed point of $F^{k/2}$. Thus $2$ orbits of $F$ would be completed $k$ iterations of the function, and so the periodicity of $x$ would be $k/2$. To show that $x$ has periodicity of $k$, we must also show that $x$ is {\it not} a fixed point of $F^m$ for any $m < k$.
 
+If we show that there is some $x \in J$ that meets these criteria for an arbitrary $k$, then we will have proven that $F$ has orbits of every periodicity.
 
 \section{Lemmas}
 % TODO: FIGURE OUT HOW WE WANT TO PRESENT THIS ACTUALLY
@@ -61,7 +64,6 @@ In the first section we will provide a rough outline of the proof for this theor
 
 
 \section{Implications/Conclusions}
-
 
 
 
