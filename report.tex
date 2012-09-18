@@ -68,6 +68,13 @@ If we show that there is some $x \in J$ that meets these criteria for an arbitra
 
 
 
+\begin{lma}
+\label{lma:fixed_point}
+	Let $F : J \rightarrow J$ and let $I \subseteq J$ be a compact interval such that $I \subseteq F \left( I \right)$. There exists at least one fixed point of F in the interval $I$ -- i.e. $x \in I$ such that $F \left( x \right) = x$.
+\end{lma}
+
+{\it Proof}: Define $p \in I$ such that $\min \left( F \left( I \right) \right) = F \left( p \right)$. Similarly, define $q \in I$ such that $\max \left( F \left( I \right) \right) = F \left( q \right)$. Because $F \left( I \right) \superset I$, we know that $F \left( p \right) \leq p$ and $F \left( q \right) \geq q$.
+
 \section{Implications/Conclusions}
 
 Though it appears that we have shown that there is some arbitrary number of fixed points of $F^k$, we can actually say a bit more about how many fixed points exist. Let $x_0$ be a point with periodicity of exactly $k$ for the function $F$.
