@@ -69,19 +69,30 @@ If we show that there is some $x \in J$ that meets these criteria for an arbitra
 
 
 \begin{lma}
-\label{lma:fixed_point}
+\label{lma:fixedpoint}
 	Let $F : J \rightarrow J$ and let $I \subseteq J$ be a compact interval such that $I \subseteq F \left( I \right)$. There exists at least one fixed point of F in the interval $I$ -- i.e. $x \in I$ such that $F \left( x \right) = x$.
 \end{lma}
 
-{\it Proof}: Define $p \in I$ such that $\min \left( F \left( I \right) \right) = F \left( p \right)$. Similarly, define $q \in I$ such that $\max \left( F \left( I \right) \right) = F \left( q \right)$. Because $F \left( I \right) \superset I$, we know that $F \left( p \right) \leq p$ and $F \left( q \right) \geq q$.
+\begin{figure}
+\label{fig:fixedpoint_graph}
+	\begin{center}
+		\includegraphics{img/fixedpoint_graph.png}
+		\caption{Diagram for Lemma \ref{lma:fixedpoint}}
+	\end{center}
+\end{figure}
+
+{\it Proof}: Define $p \in I$ such that $\min \left( F \left( I \right) \right) = F \left( p \right)$. Similarly, define $q \in I$ such that $\max \left( F \left( I \right) \right) = F \left( q \right)$ (see Figure \ref{fig:fixedpoint_graph}). Because $F \left( I \right) \supseteq I$, we know that $F \left( p \right) \leq p$ and $F \left( q \right) \geq q$. In other words, $F \left( p \right)$ would lie below the $y=x$ line, while $F \left( q \right)$ would like above the $y=x$ line. By continuity, there must be some point in between $p$ and $q$ that crosses the $y=x$ line, as can be seen in the figure. That is the fixed point of the function.
+
+More formally, let $G \left( x \right) = F \left( x \right) - x$. Since $F \left( p \right) \leq p$ and $F \left( q \right) \geq q$, we know that $G \left( p \right) \leq 0$ and $G \left( q \right) \geq 0$. Since $G$ is continuous, we know by the intermediate value theorem that there exists at least one $x$ such that $p \leq x \geq q$ and $G \left( x \right) = 0$. In other words, $F \left(x \right) = x$, making $x$ a fixed point of $F$. $\Box$
+
 
 \section{Implications/Conclusions}
 
 Though it appears that we have shown that there is some arbitrary number of fixed points of $F^k$, we can actually say a bit more about how many fixed points exist. Let $x_0$ be a point with periodicity of exactly $k$ for the function $F$.
 
-Define $x_1$, $x_2$, $\cdots$, $x_{k-1}$ to be $F \left( x_0 \right)$, $F^2 \left( x_0 \right)$, $\cdots$, $F^{k-1} \left( x_0 \right)$, respectively. We know that $x_1$ cannot equal $x_0$ because otherwise the periodicity of $x$ would be less than $k$. We also know that $x_1$  cannot equal $x_2$, $x_3$, $\cdots$ $x_{k-1}$. Assume that there was some $l < k-1$ where $x_1 = x_l$. Then the sequence $x_n = F^n \left( x \right)$ would have terms $x_0$, $x_1$, $x_2$, $\cdots$, $x_l = x_1$, $x_2$, $\cdots$. Note that this sequence never returns to $x_0$, which would make $x_0$ a non-periodic point. Thus $x_1$ is a unique point, and it does not have periodicity less than $k$. A similar argument can be made for all the other points.
+Define $x_1$, $x_2$, $\cdots$, $x_{k-1}$ to be $F \left( x_0 \right)$, $F^2 \left( x_0 \right)$, $\cdots$, $F^{k-1} \left( x_0 \right)$, respectively. We know that $x_1$ cannot equal $x_0$ because otherwise the periodicity of $x$ would be less than $k$. We also know that $x_1$  cannot equal $x_2$, $x_3$, $\cdots$, $x_{k-1}$. Assume that there was some $l < k-1$ where $x_1 = x_l$. Then the sequence $x_n = F^n \left( x \right)$ would have terms $x_0$, $x_1$, $x_2$, $\cdots$, $x_l = x_1$, $x_2$, $\cdots$. Note that this sequence never returns to $x_0$, which would make $x_0$ a non-periodic point. Thus $x_1$ is a unique point, and it does not have periodicity less than $k$. A similar argument can be made for all the other points.
 
-Now we can show that our $k$ points -- $x_0$, $x_1$, $\cdots$, $x_{k-1}$ -- are $k$-periodic. Given $x_l$, we know that $F^k \left( x_l \right) = F^{k+l} \left ( x_0 \right) = F^{l} \left ( x_0 \right) = x_l$. Thus we have shown that for each $l \in [0,k-1]$, $x_l$ is a unique point with periodicity of exactly $k$. Thus there are at least $k$ points that are $k$-periodic on the map $F$. If there was a $k+1^{th}$ unique $k$-periodic point, we could use a similar argument to show that there must be an additional $k-1$ more $k$-periodic points that lie on the $k+1^{th}$ point's orbit. To summarize, on any given map $F$ for which Theorem \ref{thm:main_theorem} applies, there are exatly $n \left( k \right)$ points with periodicity $k$, where $n \in \mathbb{N}$.
+Now we can show that our $k$ points -- $x_0$, $x_1$, $\cdots$, $x_{k-1}$ -- are $k$-periodic. Given $x_l$, we know that $F^k \left( x_l \right) = F^{k+l} \left ( x_0 \right) = F^{l} \left ( x_0 \right) = x_l$. Thus we have shown that for each $l \in [0,k-1]$, $x_l$ is a unique point with periodicity of exactly $k$. Thus there are at least $k$ points that are $k$-periodic on the map $F$. If there was a $k+1^{th}$ unique $k$-periodic point, we could use a similar argument to show that there must be an additional $k-1$ more $k$-periodic points that lie on the $k+1^{th}$ point's orbit. To summarize, on any given map $F$ for which Theorem \ref{thm:maintheorem} applies, there are exatly $n \left( k \right)$ points with periodicity $k$, where $n \in \mathbb{N}$.
 
 
 
