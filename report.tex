@@ -78,14 +78,6 @@ If we show that there is some $x \in J$ that meets these criteria for an arbitra
 	Let $F : J \rightarrow J$ be continuous and let $\{I_n\}_{n=0}^{\infty}$ be a sequence of compact intervals such that $I_n \subseteq J$ and $I_{n+1} \subseteq F \left( I_n \right)$. Then there exists a sequence of compact intervals $\{Q_n\}_{n=0}^{\infty}$ such that $Q_{n+1} \subseteq Q_n \subseteq I_0$ and $F^n \left( Q_n \right) = I_n$ for $n \geq 0$. Therefore, for any $x \in Q_n$, we have $F^n \left( x \right) \in I_n$, for any given $n$.
 \end{lma}
 
-\begin{figure}
-	\begin{center}
-		\includegraphics{img/fixedpoint_graph.png}
-		\caption{Diagram for Lemma \ref{lma:setsequence}}
-        \label{fig:setsequence_graph}
-	\end{center}
-\end{figure}
-
 {\it Proof}: Let $Q_0 = I_0$. Then clearly $F^0 \left( Q_0 \right) = Q_0 = I_0$. Assume for induction that $F^{n-1} \left( Q_{n-1} \right) = I_{n-1}$. Lemma \ref{lma:cont_comp} applied with $F = F^n$ and $J = Q_{n-1}$ proves that there is a compact interval $Q_n \subseteq Q_{n-1}$ such that $F^n \left( Q_n \right) = I_n$. By mathematical induction, this completes the proof for any $n \geq 0$. $\Box$
 
 \begin{lma}
@@ -136,7 +128,7 @@ Theorem \ref{thm:mainthm} applies to every map with a 3-cycle. Therefore, every 
 
 To see this, note that we can choose any of the three points as point $a$ in Theorem \ref{thm:mainthm}. Let $F$ be a map with a 3-cycle. Let $x$ be the smallest of the three points in the 3-cycle, and let $y = F \left( x \right), z = F \left( y \right) = F^2 \left( x \right)$. Note that $x = F \left( z \right) = F^3 \left( x \right)$ since it is a 3-cycle.
 
-If $ x < y < z$, then Theorem \ref{thm:mainthm} is satisfied with $a=x$ because $F^3\left(a\right)=x \leq a=x < F\left(a\right)=y < F^2\left(a\right)=z$. 
+If $ x < y < z$, then Theorem \ref{thm:mainthm} is satisfied with $a=x$ because $F^3\left(a\right)=x \leq a=x < F\left(a\right)=y < F^2\left(a\right)=z$.
 
 Otherwise, $x < z < y$ and Theorem \ref{thm:mainthm} is satisfied with $a=y$. Note that in this case, the assumption met in Theorem \ref{thm:mainthm} is $F^3\left(a\right)=y \geq a=y > F\left(a\right)=z > F^2\left(a\right)=x$. Therefore, for any function with a 3-cycle, Theorem \ref{thm:mainthm} holds and there are orbits of every periodicity.
 \end{document}
