@@ -67,6 +67,7 @@ We begin by introducing three lemmas to assist in the proof of Theorem \ref{thm:
 \end{figure}
 
 {\it Proof}: Let $J = \left[ F \left( p \right), F \left( q \right) \right]$, where $p, q \in I$. If $p < q$, let $r$ be the last point of $\left[ p, q\right]$ where $F \left( r \right) = F \left( p \right)$ and let $s$ be the first point after $r$ where $F \left( s \right) = F \left( q \right)$, as shown in Figure \ref{fig:continuity_graph}. Then, $F \left( \left[ r, s\right] \right) = J = \left[ F \left( p \right), F \left( q \right) \right]$ as desired. Similar logic proves the $p > q$ case. $\Box$
+\\
 
 Now that we have proven that there is a compact interval $Q \subseteq J$ such that $F(Q) = J$ for an interval $J \subseteq F(I)$, we can investigate sequences of compact intervals. This will provide a sequence in which we will be able to find unique fixed points when we prove the existence of orbits of every periodicity in Theorem \ref{thm:mainthm}.
 
@@ -76,11 +77,13 @@ Now that we have proven that there is a compact interval $Q \subseteq J$ such th
 \end{lma}
 
 {\it Proof}: Let $Q_0 = I_0$. Then clearly $F^0 \left( Q_0 \right) = Q_0 = I_0$. Assume for induction that $F^{n-1} \left( Q_{n-1} \right) = I_{n-1}$. Lemma \ref{lma:cont_comp} applied with $F = F^n$ and $J = Q_{n-1}$ proves that there is a compact interval $Q_n \subseteq Q_{n-1}$ such that $F^n \left( Q_n \right) = I_n$. By mathematical induction, this completes the proof for any $n \geq 0$. $\Box$
+\\
 
+We now change gears slightly to prove the existence of (at least one) fixed point in a compact interval subject to some conditions. We will show that these conditions are met and combine the results of this Lemma \ref{lma:fixedpoint} with those from Lemma \ref{lma:setsequence} in our proof of Theorem \ref{thm:mainthm}.
 
 \begin{lma}
 \label{lma:fixedpoint}
-	Let $F : J \rightarrow J$ and let $I \subseteq J$ be a compact interval such that $I \subseteq F \left( I \right)$. There exists at least one fixed point of F in the interval $I$ -- i.e. $x \in I$ such that $F \left( x \right) = x$.
+	Let $F : J \rightarrow J$ and let $I \subseteq J$ be a compact interval such that $I \subseteq F \left( I \right)$. There exists at least one fixed point of $F$ in the interval $I$ -- i.e. $x \in I$ such that $F \left( x \right) = x$.
 \end{lma}
 
 \begin{figure}
