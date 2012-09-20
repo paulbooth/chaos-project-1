@@ -59,7 +59,7 @@ If we show that there is some $x \in J$ that meets these criteria for an arbitra
 
 \begin{lma}
 \label{lma:cont_comp}
-	Let $G : I \rightarrow R$ be continuous, where $I$ is an interval. For any compact interval $J \subset G(I)$ there is a compact interval $Q \subset J$ such that $G(Q) = J$.
+	Let $F : I \rightarrow R$ be continuous, where $I$ is an interval. For any compact interval $J \subseteq F(I)$ there is a compact interval $Q \subseteq J$ such that $F(Q) = J$.
 \end{lma}
 
 \begin{figure}
@@ -70,9 +70,24 @@ If we show that there is some $x \in J$ that meets these criteria for an arbitra
 	\end{center}
 \end{figure}
 
-{\it Proof}: Let $J = \left[ G \left( p \right), G \left( q \right) \right]$, where $p, q \in I$. If $p < q$, let $r$ be the last point of $\left[ p, q\right]$ where $G \left( r \right) = G \left( p \right)$ and let $s$ be the first point after $r$ where $G \left( s \right) = G \left( q \right)$, as shown in Figure \ref{fig:continuity_graph}. Then, $G \left( \left[ r, s\right] \right) = J = \left[ G \left( p \right), G \left( q \right) \right]$ as desired. Similar logic proves the $p > q$ case. $\Box$
+{\it Proof}: Let $J = \left[ F \left( p \right), F \left( q \right) \right]$, where $p, q \in I$. If $p < q$, let $r$ be the last point of $\left[ p, q\right]$ where $F \left( r \right) = F \left( p \right)$ and let $s$ be the first point after $r$ where $F \left( s \right) = F \left( q \right)$, as shown in Figure \ref{fig:continuity_graph}. Then, $F \left( \left[ r, s\right] \right) = J = \left[ F \left( p \right), F \left( q \right) \right]$ as desired. Similar logic proves the $p > q$ case. $\Box$
 
 % TODO: include why we use this lemma 0
+
+\begin{lma}
+\label{lma:setsequence}
+	Let $F : J \rightarrow J$ be continuous and let $\{I_n\}_{n=0}^{\infty}$ be a sequence of compact intervals such that $I_n \subseteq J$ and $I_{n+1} \subseteq F \left( I_n \right)$. Then there exists a sequence of compact intervals $\{Q_n\}_{n=0}^{\infty}$ such that $Q_{n+1} \subseteq Q_n \subseteq I_0$ and $F^n \left( Q_n \right) = I_n$ for $n \geq 0$. Therefore, for any $x \in Q_n$, we have $F^n \left( x \right) \in I_n$, for any given $n$.
+\end{lma}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{img/fixedpoint_graph.png}
+		\caption{Diagram for Lemma \ref{lma:setsequence}}
+        \label{fig:setsequence_graph}
+	\end{center}
+\end{figure}
+
+{\it Proof}: Let $Q_0 = I_0$. Then clearly $F^0 \left( Q_0 \right) = Q_0 = I_0$. Assume for induction that $F^{n-1} \left( Q_{n-1} \right) = I_{n-1}$. Lemma \ref{lma:cont_comp} applied with $F = F^n$ and $J = Q_{n-1}$ proves that there is a compact interval $Q_n \subseteq Q_{n-1}$ such that $F^n \left( Q_n \right) = I_n$. By mathematical induction, this completes the proof for any $n \geq 0$. $\Box$
 
 \begin{lma}
 \label{lma:fixedpoint}
@@ -92,7 +107,6 @@ If we show that there is some $x \in J$ that meets these criteria for an arbitra
 More formally, let $G \left( x \right) = F \left( x \right) - x$. Since $F \left( p \right) \leq p$ and $F \left( q \right) \geq q$, we know that $G \left( p \right) \leq 0$ and $G \left( q \right) \geq 0$. Since $G$ is continuous, we know by the Intermediate Value Theorem that there exists at least one $x$ such that $p \leq x \leq q$ and $G \left( x \right) = 0$. In other words, $F \left(x \right) = x$, making $x$ a fixed point of $F$. $\Box$
 
 
-
 \section{The main theorem revisited}
 
 Armed with the lemmas in the previous section, we are now ready to prove Theorem \ref{thm:mainthm}. Let $k$ be any natural number, let $F : J \rightarrow J$, and let $a \in J$ be the point in the assumptions of the theorem. Without loss of generality, let's assume that $F^3\left(a\right) \leq a < F\left(a\right) < F^2\left(a\right)$. (If the opposite is true, the proof follows the exact same steps). Let $b = F \left( a \right)$, $c = F ^2 \left( a \right)$, and $d = F^4  \left( a \right)$. Finally, let $L = \left[ b, c \right]$, and let $k = \left[ a,b \right]$.
@@ -100,7 +114,6 @@ Armed with the lemmas in the previous section, we are now ready to prove Theorem
 %TODO: make sure that this proof works for the case where k=1
 
 Again, the first step of showing that $F$ contains a $k$-cycle is to prove that $F^k$ has a fixed point $p_k \in J$. To do this, we will construct a set of nested intervals $I_n$  using Lemma \ref{lma:intervals}, which we will then apply Lemma \ref{lma:fixedpoint} to. Let $l_0$, $l_1$, $l_2$, $\cdots$, $l_{k-2}$ = $L$, and let $l_k$ = k. For $n \geq k$, we will let $I_n = I_l$, where $l = n \mod k$. Thus the intervals $I_n$ follow a repeating pattern. We will now show that for any $n \in \mathbb{N}$, $I_n \subseteq F \left( I_{n-1} \right)$. In the case where $I_n = I_{n-1} = L$, note that $F \left( b \right) = c$, and $F \left( c \right) = d < b$. By the Intermediate Value Theorem, $F$ must take on all values between $F \left( b \right)$ and $F \left( c \right)$ in the interval $L$. Therefore, $F \left( I_{n-1} \right) = F \left( L \right) = [d, c] \supset \left[ b,c \right] = L$. If $I_n = K = I_n$ and $I_{n-1} = L$, since $d \leq a$ we know that $F \left( I_{n-1} \right) = F \left( L \right) = [d, c] \supset \left[ a,b \right] = K = I_n$. Finally, in the case where $I_n = L$ and $I_{n-1} = K$, we know that $F \left( I_{n-1} \right) = F \left( K \right) = [a, b] = \left[ b,c \right] = L = I_n$. In all of these possible cases, note that $I_n \subseteq F \left( I_{n-1} \right)$ and thus $I_n$ fits the hypothesis of Lemma \ref{lma:fixedpoint}.
- 
 
 
 \section{Implications/Conclusions}
