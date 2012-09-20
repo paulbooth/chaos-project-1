@@ -132,8 +132,13 @@ Define $x_1$, $x_2$, $\cdots$, $x_{k-1}$ to be $F \left( x_0 \right)$, $F^2 \lef
 
 Now we can show that our $k$ points -- $x_0$, $x_1$, $\cdots$, $x_{k-1}$ -- are $k$-periodic. Given $x_l$, we know that $F^k \left( x_l \right) = F^{k+l} \left ( x_0 \right) = F^{l} \left ( x_0 \right) = x_l$. Thus we have shown that for each $l \in [0,k-1]$, $x_l$ is a unique point with periodicity of exactly $k$. Thus there are at least $k$ points that are $k$-periodic on the map $F$. If there was a $k+1^{th}$ unique $k$-periodic point, we could use a similar argument to show that there must be an additional $k-1$ more $k$-periodic points that lie on the $k+1^{th}$ point's orbit. To summarize, on any given map $F$ for which Theorem \ref{thm:maintheorem} applies, there are exatly $n \left( k \right)$ points with periodicity $k$, where $n \in \mathbb{N}$.
 
-% TODO: include basic proof for how 3-cycle -> hypothesis
-% TODO: add more implications
+\subsection{ 3-cycle implies orbits of every periodicity}
+Theorem \ref{thm:mainthm} applies to every map with a 3-cycle. Therefore, every map with a 3-cycle has orbits of every periodicity.
 
+To see this, note that we can choose any of the three points as point $a$ in Theorem \ref{thm:mainthm}. Let $F$ be a map with a 3-cycle. Let $x$ be the smallest of the three points in the 3-cycle, and let $y = F \left( x \right), z = F \left( y \right) = F^2 \left( x \right)$. Note that $x = F \left( z \right) = F^3 \left( x \right)$ since it is a 3-cycle.
+
+If $ x < y < z$, then Theorem \ref{thm:mainthm} is satisfied with $a=x$ because $F^3\left(a\right)=x \leq a=x < F\left(a\right)=y < F^2\left(a\right)=z$. 
+
+Otherwise, $x < z < y$ and Theorem \ref{thm:mainthm} is satisfied with $a=y$. Note that in this case, the assumption met in Theorem \ref{thm:mainthm} is $F^3\left(a\right)=y \geq a=y > F\left(a\right)=z > F^2\left(a\right)=x$. Therefore, for any function with a 3-cycle, Theorem \ref{thm:mainthm} holds and there are orbits of every periodicity.
 \end{document}
 
