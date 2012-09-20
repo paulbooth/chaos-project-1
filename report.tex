@@ -43,7 +43,7 @@ In the first section we will provide a rough outline of the proof for this theor
 
 
 \section{The big picture}
-\label{stc:thebigpic}
+\label{sec:thebigpic}
 
 In order to prove that a first-order map $F$ contains an orbit with period $k$, there are two things we must prove. First, we must show that there is a fixed point on the $k^{th}$ return map of F. In other words, we must show that there is some $x \in J$ for which $F^k \left( x \right) = x$. To understand why this implies periodicity, let's examine $F^2k \left( x \right)$. This is simply equal to $F^k \left( F^k \left( x \right) \right) = F^k \left( x \right) = x$. A simple inductive proof will show that $F^n \left( x \right) = x$ whenever $n \equiv 0 \left(\mod k \right)$, thus showing that $x$ is a periodic point.
 
@@ -113,7 +113,7 @@ More formally, let $G \left( x \right) = F \left( x \right) - x$. Since $F \left
 	\end{center}
 \end{figure}
 
-Armed with the lemmas in the previous section, we are now ready to prove Theorem \ref{thm:mainthm}. Let $k$ be any natural number, let $F : J \rightarrow J$, and let $a \in J$ be the point in the assumptions of the theorem. Without loss of generality, let's assume that $F^3\left(a\right) \leq a < F\left(a\right) < F^2\left(a\right)$. (If the opposite is true, the proof follows the exact same steps). Let $b = F \left( a \right)$, $c = F ^2 \left( a \right)$, and $d = F^4  \left( a \right)$. Finally, let $L = \left[ b, c \right]$, and let $k = \left[ a,b \right]$ (see Figure \ref{img:mainthm_graph}.
+Armed with the lemmas in the previous section, we are now ready to prove Theorem \ref{thm:mainthm}. Let $k$ be any natural number, let $F : J \rightarrow J$, and let $a \in J$ be the point in the assumptions of the theorem. Without loss of generality, let's assume that $F^3\left(a\right) \leq a < F\left(a\right) < F^2\left(a\right)$. (If the opposite is true, the proof follows the exact same steps). Let $b = F \left( a \right)$, $c = F ^2 \left( a \right)$, and $d = F^4  \left( a \right)$. Finally, let $L = \left[ b, c \right]$, and let $k = \left[ a,b \right]$ (see Figure \ref{fig:mainthm_graph}).
 
 %TODO: make sure that this proof works for the case where k=1
 
