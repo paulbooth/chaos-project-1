@@ -17,9 +17,6 @@
 \begin{document}
   \maketitle
 
-\begin{abstract}
-\end{abstract}
-
 
 
 \section{Introduction}
@@ -42,6 +39,7 @@ In the first section we will provide a rough outline of the proof for this theor
 
 
 \section{The big picture}
+\label{stc:thebigpic}
 
 In order to prove that a first-order map $F$ contains an orbit with period $k$, there are two things we must prove. First, we must show that there is a fixed point on the $k^{th}$ return map of F. In other words, we must show that there is some $x \in J$ for which $F^k \left( x \right) = x$. To understand why this implies periodicity, let's examine $F^2k \left( x \right)$. This is simply equal to $F^k \left( F^k \left( x \right) \right) = F^k \left( x \right) = x$. A simple inductive proof will show that $F^n \left( x \right) = x$ whenever $n \equiv 0 \left(\mod k \right)$, thus showing that $x$ is a periodic point.
 
@@ -103,7 +101,7 @@ More formally, let $G \left( x \right) = F \left( x \right) - x$. Since $F \left
 \begin{figure}
 	\begin{center}
 		\includegraphics{img/mainthm_graph.png}
-		\caption{Diagram for Lemma \ref{thm:mainthm}}
+		\caption{Diagram for Theorem \ref{thm:mainthm}}
         \label{fig:fixedpoint_graph}
 	\end{center}
 \end{figure}
@@ -114,6 +112,13 @@ Armed with the lemmas in the previous section, we are now ready to prove Theorem
 
 Again, the first step of showing that $F$ contains a $k$-cycle is to prove that $F^k$ has a fixed point $p_k \in J$. To do this, we will construct a set of nested intervals $I_n$  using Lemma \ref{lma:setsequence}, which we will then apply Lemma \ref{lma:fixedpoint} to. Let $l_0$, $l_1$, $l_2$, $\cdots$, $l_{k-2}$ = $L$, and let $l_k$ = k. For $n \geq k$, we will let $I_n = I_l$, where $l = n \mod k$. Thus the intervals $I_n$ follow a repeating pattern. We will now show that for any $n \in \mathbb{N}$, $I_n \subseteq F \left( I_{n-1} \right)$. In the case where $I_n = I_{n-1} = L$, note that $F \left( b \right) = c$, and $F \left( c \right) = d < b$. By the Intermediate Value Theorem, $F$ must take on all values between $F \left( b \right)$ and $F \left( c \right)$ in the interval $L$. Therefore, $F \left( I_{n-1} \right) = F \left( L \right) = [d, c] \supset \left[ b,c \right] = L$. If $I_n = K = I_n$ and $I_{n-1} = L$, since $d \leq a$ we know that $F \left( I_{n-1} \right) = F \left( L \right) = [d, c] \supset \left[ a,b \right] = K = I_n$. Finally, in the case where $I_n = L$ and $I_{n-1} = K$, we know that $F \left( I_{n-1} \right) = F \left( K \right) = [a, b] = \left[ b,c \right] = L = I_n$. In all of these possible cases, note that $I_n \subseteq F \left( I_{n-1} \right)$ and thus $I_n$ fits the hypothesis of Lemma \ref{lma:fixedpoint}.
 
+Applying Lemma \ref{lma:fixedpoint} to $I_n$, we end up with a sequence $Q_n$ with $Q_n \subseteq Q_{n-1} \subseteq Q_0 = I_0$ and $F^n \left( Q_n \right) = I_n$. Thus $Q_k \subseteq Q_0 = I_0 = L$. Furthermore, we know that $I_k = L = F^k \left( Q_k \right)$. Therefore, we know that $Q_k \subseteq F^k \left( Q_k \right)$, which makes $Q_k$ fit the hypothesis of Lemma \ref{lma:fixedpoint}. Therefore, we know that $F^k$ contains a fixed point $p_k \in Q_k$.
+
+To complete this proof, we must now show that $p_k$ is not a fixed point of $F^j$ for $j < k$. We will prove this via contradiction. Assume that there is some $j < k$ for which $F^j \left( p_k \right) = p_k$. This implies that $p_k$ has periodicity of $j$. We also know that $k$ must therefore be a multiple of $j$. Now let's examine $F^{k-1} \left( p_k \right)$ and $F^{j-1} \left( p_k \right)$. Since $p_k \in Q_k \subseteq Q_{k-1} \subseteq Q_{j-1}$, by continuity we know that $F^{k-1} \left( p_k \right) \subseteq F^{k-1} \left( Q_{k-1} \right) = I_{k-1} = K$, and also $F^{j-1} \left( p_k \right) \subseteq F^{j-1} \left( Q_{j-1} \right) = I_{j-1} = L$. Furthermore, we also know that in the sequence $F^n \left( p_k \right)$, both of these points come right before the completion of one period, and therefore the points must be equal. Therefore $F^{j-1} \left( p_k \right) = F^{k-1} \left( p_k \right)$ must be both in $L$ and $K$. The only point which is in both of these intervals is $b$. However, if $F^{j-1} \left( p_k \right) = b$, then $F^{j} \left( p_k \right) = c$ and therefore $F^{j-1} \left( p_k \right) = d$. This cannot be the case because $F^{j-1} \left( p_k \right) \subseteq F^{j-1} \left( Q_{j+1} \right) = I_{j+1} = L$, and $d$ is not in $L$. Thus our assumption is false: $p_k$ cannot be a fixed point of $F^j$ for $j < k$.
+
+We have now completed both the steps outlined in Section \ref{stc:thebigpic}, and thus our proof of Theorem \ref{thm:mainthm} is complete. $\Box$
+
+
 
 \section{Implications/Conclusions}
 
@@ -121,7 +126,7 @@ Though it appears that we have shown that there is some arbitrary number of fixe
 
 Define $x_1$, $x_2$, $\cdots$, $x_{k-1}$ to be $F \left( x_0 \right)$, $F^2 \left( x_0 \right)$, $\cdots$, $F^{k-1} \left( x_0 \right)$, respectively. We know that $x_1$ cannot equal $x_0$ because otherwise the periodicity of $x$ would be less than $k$. We also know that $x_1$  cannot equal $x_2$, $x_3$, $\cdots$, $x_{k-1}$. Assume that there was some $l < k-1$ where $x_1 = x_l$. Then the sequence $x_n = F^n \left( x \right)$ would have terms $x_0$, $x_1$, $x_2$, $\cdots$, $x_l = x_1$, $x_2$, $\cdots$. Note that this sequence never returns to $x_0$, which would make $x_0$ a non-periodic point. Thus $x_1$ is a unique point, and it does not have periodicity less than $k$. A similar argument can be made for all the other points.
 
-Now we can show that our $k$ points -- $x_0$, $x_1$, $\cdots$, $x_{k-1}$ -- are $k$-periodic. Given $x_l$, we know that $F^k \left( x_l \right) = F^{k+l} \left ( x_0 \right) = F^{l} \left ( x_0 \right) = x_l$. Thus we have shown that for each $l \in [0,k-1]$, $x_l$ is a unique point with periodicity of exactly $k$. Thus there are at least $k$ points that are $k$-periodic on the map $F$. If there was a $k+1^{th}$ unique $k$-periodic point, we could use a similar argument to show that there must be an additional $k-1$ more $k$-periodic points that lie on the $k+1^{th}$ point's orbit. To summarize, on any given map $F$ for which Theorem \ref{thm:maintheorem} applies, there are exatly $n \left( k \right)$ points with periodicity $k$, where $n \in \mathbb{N}$.
+Now we can show that our $k$ points -- $x_0$, $x_1$, $\cdots$, $x_{k-1}$ -- are $k$-periodic. Given $x_l$, we know that $F^k \left( x_l \right) = F^{k+l} \left ( x_0 \right) = F^{l} \left ( x_0 \right) = x_l$. Thus we have shown that for each $l \in [0,k-1]$, $x_l$ is a unique point with periodicity of exactly $k$. Thus there are at least $k$ points that are $k$-periodic on the map $F$. If there was a $k+1^{th}$ unique $k$-periodic point, we could use a similar argument to show that there must be an additional $k-1$ more $k$-periodic points that lie on the $k+1^{th}$ point's orbit. To summarize, on any given map $F$ for which Theorem \ref{thm:mainthm} applies, there are excatly $n \left( k \right)$ points with periodicity $k$, where $n \in \mathbb{N}$.
 
 \subsection{ 3-cycle implies orbits of every periodicity}
 Theorem \ref{thm:mainthm} applies to every map with a 3-cycle. Therefore, every map with a 3-cycle has orbits of every periodicity.
