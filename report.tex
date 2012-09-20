@@ -68,12 +68,15 @@ We begin by introducing three lemmas to assist in the proof of Theorem \ref{thm:
 
 {\it Proof}: Let $J = \left[ F \left( p \right), F \left( q \right) \right]$, where $p, q \in I$. If $p < q$, let $r$ be the last point of $\left[ p, q\right]$ where $F \left( r \right) = F \left( p \right)$ and let $s$ be the first point after $r$ where $F \left( s \right) = F \left( q \right)$, as shown in Figure \ref{fig:continuity_graph}. Then, $F \left( \left[ r, s\right] \right) = J = \left[ F \left( p \right), F \left( q \right) \right]$ as desired. Similar logic proves the $p > q$ case. $\Box$
 
+Now that we have proven that there is a compact interval $Q \subseteq J$ such that $F(Q) = J$ for an interval $J \subseteq F(I)$, we can investigate sequences of compact intervals. This will provide a sequence in which we will be able to find unique fixed points when we prove the existence of orbits of every periodicity in Theorem \ref{thm:mainthm}.
+
 \begin{lma}
 \label{lma:setsequence}
 	Let $F : J \rightarrow J$ be continuous and let $\{I_n\}_{n=0}^{\infty}$ be a sequence of compact intervals such that $I_n \subseteq J$ and $I_{n+1} \subseteq F \left( I_n \right)$. Then there exists a sequence of compact intervals $\{Q_n\}_{n=0}^{\infty}$ such that $Q_{n+1} \subseteq Q_n \subseteq I_0$ and $F^n \left( Q_n \right) = I_n$ for $n \geq 0$. Therefore, for any $x \in Q_n$, we have $F^n \left( x \right) \in I_n$, for any given $n$.
 \end{lma}
 
 {\it Proof}: Let $Q_0 = I_0$. Then clearly $F^0 \left( Q_0 \right) = Q_0 = I_0$. Assume for induction that $F^{n-1} \left( Q_{n-1} \right) = I_{n-1}$. Lemma \ref{lma:cont_comp} applied with $F = F^n$ and $J = Q_{n-1}$ proves that there is a compact interval $Q_n \subseteq Q_{n-1}$ such that $F^n \left( Q_n \right) = I_n$. By mathematical induction, this completes the proof for any $n \geq 0$. $\Box$
+
 
 \begin{lma}
 \label{lma:fixedpoint}
@@ -113,7 +116,7 @@ Applying Lemma \ref{lma:fixedpoint} to $I_n$, we end up with a sequence $Q_n$ wi
 
 To complete this proof, we must now show that $p_k$ is not a fixed point of $F^j$ for $j < k$. We will prove this via contradiction. Assume that there is some $j < k$ for which $F^j \left( p_k \right) = p_k$. This implies that $p_k$ has periodicity of $j$. We also know that $k$ must therefore be a multiple of $j$. Now let's examine $F^{k-1} \left( p_k \right)$ and $F^{j-1} \left( p_k \right)$. Since $p_k \in Q_k \subseteq Q_{k-1} \subseteq Q_{j-1}$, by continuity we know that $F^{k-1} \left( p_k \right) \subseteq F^{k-1} \left( Q_{k-1} \right) = I_{k-1} = K$, and also $F^{j-1} \left( p_k \right) \subseteq F^{j-1} \left( Q_{j-1} \right) = I_{j-1} = L$. Furthermore, we also know that in the sequence $F^n \left( p_k \right)$, both of these points come right before the completion of one period, and therefore the points must be equal. Therefore $F^{j-1} \left( p_k \right) = F^{k-1} \left( p_k \right)$ must be both in $L$ and $K$. The only point which is in both of these intervals is $b$. However, if $F^{j-1} \left( p_k \right) = b$, then $F^{j} \left( p_k \right) = c$ and therefore $F^{j-1} \left( p_k \right) = d$. This cannot be the case because $F^{j-1} \left( p_k \right) \subseteq F^{j-1} \left( Q_{j+1} \right) = I_{j+1} = L$, and $d$ is not in $L$. Thus our assumption is false: $p_k$ cannot be a fixed point of $F^j$ for $j < k$.
 
-We have now completed both the steps outlined in Section \ref{stc:thebigpic}, and thus our proof of Theorem \ref{thm:mainthm} is complete. $\Box$
+We have now completed both the steps outlined in Section \ref{sec:thebigpic}, and thus our proof of Theorem \ref{thm:mainthm} is complete. $\Box$
 
 
 
