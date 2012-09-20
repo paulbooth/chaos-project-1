@@ -55,18 +55,18 @@ If we show that there is some $x \in J$ that meets these criteria for an arbitra
 
 \begin{lma}
 \label{lma:cont_comp}
-	Continuity / compactness
+	Let $G : I \rightarrow R$ be continuous, where $I$ is an interval. For any compact interval $J \subset G(I)$ there is a compact interval $Q \subset J$ such that $G(Q) = J$.
 \end{lma}
 
 \begin{figure}
-\label{fig:continuity_graph}
 	\begin{center}
 		\includegraphics{img/continuity_graph.png}
 		\caption{Diagram for Lemma \ref{lma:cont_comp}}
+        \label{fig:continuity_graph}
 	\end{center}
 \end{figure}
 
-
+{\it Proof}: Let $J = \left[ G \left( p \right), G \left( q \right) \right]$, where $p, q \in I$. If $p < q$, let $r$ be the last point of $\left[ p, q\right]$ where $G \left( r \right) = G \left( p \right)$ and let $s$ be the first point after $r$ where $G \left( s \right) = G \left( q \right)$, as shown in Figure \ref{fig:continuity_graph}. Then, $G \left( \left[ r, s\right] \right) = J = \left[ G \left( p \right), G \left( q \right) \right]$ as desired. Similar logic proves the $p > q$ case. $\Box$
 
 \begin{lma}
 \label{lma:fixedpoint}
@@ -74,10 +74,10 @@ If we show that there is some $x \in J$ that meets these criteria for an arbitra
 \end{lma}
 
 \begin{figure}
-\label{fig:fixedpoint_graph}
 	\begin{center}
 		\includegraphics{img/fixedpoint_graph.png}
 		\caption{Diagram for Lemma \ref{lma:fixedpoint}}
+        \label{fig:fixedpoint_graph}
 	\end{center}
 \end{figure}
 
