@@ -125,11 +125,17 @@ We have now completed both the steps outlined in Section \ref{sec:thebigpic}, an
 
 \section{Implications/Conclusions}
 
+We will now reflect on the theorem we have just proven with a few observations.
+
+\subsection{Number of $k$-periodic points}
+
 Though it appears that we have shown that there is some arbitrary number of fixed points of $F^k$, we can actually say a bit more about how many fixed points exist. Let $x_0$ be a point with periodicity of exactly $k$ for the function $F$.
 
 Define $x_1$, $x_2$, $\cdots$, $x_{k-1}$ to be $F \left( x_0 \right)$, $F^2 \left( x_0 \right)$, $\cdots$, $F^{k-1} \left( x_0 \right)$, respectively. We know that $x_1$ cannot equal $x_0$ because otherwise the periodicity of $x$ would be less than $k$. We also know that $x_1$  cannot equal $x_2$, $x_3$, $\cdots$, $x_{k-1}$. Assume that there was some $l < k-1$ where $x_1 = x_l$. Then the sequence $x_n = F^n \left( x \right)$ would have terms $x_0$, $x_1$, $x_2$, $\cdots$, $x_l = x_1$, $x_2$, $\cdots$. Note that this sequence never returns to $x_0$, which would make $x_0$ a non-periodic point. Thus $x_1$ is a unique point, and it does not have periodicity less than $k$. A similar argument can be made for all the other points.
 
 Now we can show that our $k$ points -- $x_0$, $x_1$, $\cdots$, $x_{k-1}$ -- are $k$-periodic. Given $x_l$, we know that $F^k \left( x_l \right) = F^{k+l} \left ( x_0 \right) = F^{l} \left ( x_0 \right) = x_l$. Thus we have shown that for each $l \in [0,k-1]$, $x_l$ is a unique point with periodicity of exactly $k$. Thus there are at least $k$ points that are $k$-periodic on the map $F$. If there was a $k+1^{th}$ unique $k$-periodic point, we could use a similar argument to show that there must be an additional $k-1$ more $k$-periodic points that lie on the $k+1^{th}$ point's orbit. To summarize, on any given map $F$ for which Theorem \ref{thm:mainthm} applies, there are excatly $n \left( k \right)$ points with periodicity $k$, where $n \in \mathbb{N}$.
+
+
 
 \subsection{ 3-cycle implies orbits of every periodicity}
 Theorem \ref{thm:mainthm} applies to every map with a 3-cycle. Therefore, every map with a 3-cycle has orbits of every periodicity.
