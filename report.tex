@@ -18,10 +18,14 @@
   \maketitle
 
 
+\begin{abstract}
+In this paper, we step through a proof from \cite{li}. The theorem we prove shows that certain continuous first-order maps - including those that contain 3-cycles - contain periodic orbits of any degree. We step through this proof by showing that unique fixed points exist on an arbitrary return-map for a function that meets the hypothesis of our theorem. We conclude by discussing the implications of this theorem.
+\end{abstract}
+
 
 \section{Introduction}
 
-The theorem we are trying to prove is from {\it Period Three Implies Chaos} by Tien-Yien Li and James A. Yorke.
+The theorem we are trying to prove is from ``Period Three Implies Chaos'' by Tien-Yien Li and James A. Yorke \cite{li}.
 
 \begin{thm}
 \label{thm:mainthm}
@@ -145,5 +149,16 @@ To see this, note that we can choose any of the three points as point $a$ in The
 If $ x < y < z$, then Theorem \ref{thm:mainthm} is satisfied with $a=x$ because $F^3\left(a\right)=x \leq a=x < F\left(a\right)=y < F^2\left(a\right)=z$.
 
 Otherwise, $x < z < y$ and Theorem \ref{thm:mainthm} is satisfied with $a=y$. Note that in this case, the assumption met in Theorem \ref{thm:mainthm} is $F^3\left(a\right)=y \geq a=y > F\left(a\right)=z > F^2\left(a\right)=x$. Therefore, for any function with a 3-cycle, Theorem \ref{thm:mainthm} holds and there are orbits of every periodicity.
+
+
+
+
+
+\begin{thebibliography}{1}
+	\item {li} Li, T.Y. and Yorke, J. A., 
+		``Period 3 Implies Chaos,''		{\it American Mathematical Monthly}, 
+		vol. 82, 1975, pp. 985–992.
+\end{thebibliography}
+
 \end{document}
 
